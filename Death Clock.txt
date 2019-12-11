@@ -1,0 +1,702 @@
+import tkinter as Tkinter 
+  
+counter = -1
+running = False
+def counter_label(label): 
+    def count(): 
+        if running: 
+            global counter 
+  
+            # To manage the intial delay. 
+            if counter==-1:             
+                display="Starting..."
+            else: 
+                display=str(counter) 
+  
+            label['text']=display   # Or label.config(text=display) 
+  
+            # label.after(arg1, arg2) delays by  
+            # first argument given in milliseconds 
+            # and then calls the function given as second argument. 
+            # Generally like here we need to call the  
+            # function in which it is present repeatedly. 
+            # Delays by 1000ms=1 seconds and call count again. 
+            label.after(1000, count)  
+            counter += 1
+  
+    # Triggering the start of the counter. 
+    count()      
+  
+# start function of the stopwatch 
+def Start(label): 
+    global running 
+    running=True
+    counter_label(label) 
+    start['state']='disabled'
+    stop['state']='normal'
+    reset['state']='normal'
+  
+# Stop function of the stopwatch 
+def Stop(): 
+    global running 
+    start['state']='normal'
+    stop['state']='disabled'
+    reset['state']='normal'
+    running = False
+  
+# Reset function of the stopwatch 
+def Reset(label): 
+    global counter 
+    counter=-1
+  
+    # If rest is pressed after pressing stop. 
+    if running==False:       
+        reset['state']='disabled'
+        label['text']="I'll allow it."
+  
+    # If reset is pressed while the stopwatch is running. 
+    else:                
+        label['text']='Starting...'
+  
+root = Tkinter.Tk() 
+root.title("Stopwatch") 
+  
+# Fixing the window size. 
+root.minsize(width=250, height=70) 
+label = Tkinter.Label(root, text="Welcome! Are you ready to begin the game of", fg="black", font="Verdana 20 bold")
+label1 = Tkinter.Label(root, text="DEATH CLOCK?", fg="red", font="Times 30 bold")
+rules_label = Tkinter.Label(root, text="The rules are simple. It's you vs the computer. A timer will start, and whomever dies first loses!", fg="black", font="Verdana 10 bold")
+label.pack()
+label1.pack()
+rules_label.pack()
+start = Tkinter.Button(root, text='Start',  
+width=15, command=lambda:Start(label)) 
+stop = Tkinter.Button(root, text='Stop',  
+width=15, state='disabled', command=Stop) 
+reset = Tkinter.Button(root, text='Reset', 
+ width=15, state='disabled', command=lambda:Reset(label)) 
+start.pack() 
+stop.pack() 
+reset.pack() 
+root.mainloop()
+
+import tkinter as Tkinter
+  
+counter = -1
+running = False
+def counter_label(label): 
+    def count(): 
+        if running: 
+            global counter 
+  
+            # To manage the intial delay. 
+            if counter==-1:             
+                display="Starting..."
+            else: 
+                display=str(counter) 
+  
+            label['text']=display   # Or label.config(text=display) 
+  
+            # label.after(arg1, arg2) delays by  
+            # first argument given in milliseconds 
+            # and then calls the function given as second argument. 
+            # Generally like here we need to call the  
+            # function in which it is present repeatedly. 
+            # Delays by 1000ms=1 seconds and call count again. 
+            label.after(1000, count)  
+            counter += 1
+  
+    # Triggering the start of the counter. 
+    count()      
+  
+# start function of the stopwatch 
+def Start(label): 
+    global running 
+    running=True
+    counter_label(label) 
+    start['state']='disabled'
+    stop['state']='normal'
+    reset['state']='normal'
+  
+# Stop function of the stopwatch 
+def Stop(): 
+    global running 
+    start['state']='normal'
+    stop['state']='disabled'
+    reset['state']='normal'
+    running = False
+  
+# Reset function of the stopwatch 
+def Reset(label): 
+    global counter 
+    counter=-1
+  
+    # If rest is pressed after pressing stop. 
+    if running==False:       
+        reset['state']='disabled'
+        label['text']="I'll allow it."
+  
+    # If reset is pressed while the stopwatch is running. 
+    else:                
+        label['text']='Starting...'
+  
+root = Tkinter.Tk() 
+root.title("Stopwatch") 
+  
+# Fixing the window size. 
+root.minsize(width=250, height=70) 
+label = Tkinter.Label(root, text="YOU CANNOT ESCAPE", fg="black", font="Verdana 20 bold")
+label1 = Tkinter.Label(root, text="DEATH CLOCK?", fg="red", font="Times 30 bold")
+rules_label = Tkinter.Label(root, text="DON'T TRY TO CLOSE IT", fg="black", font="Verdana 10 bold")
+label.pack()
+label1.pack()
+rules_label.pack()
+start = Tkinter.Button(root, text='Start',  
+width=15, command=lambda:Start(label)) 
+stop = Tkinter.Button(root, text='Stop',  
+width=15, state='disabled', command=Stop) 
+reset = Tkinter.Button(root, text='Reset', 
+ width=15, state='disabled', command=lambda:Reset(label)) 
+start.pack() 
+stop.pack() 
+reset.pack() 
+root.mainloop()
+import tkinter as Tkinter
+  
+counter = -1
+running = False
+def counter_label(label): 
+    def count(): 
+        if running: 
+            global counter 
+  
+            # To manage the intial delay. 
+            if counter==-1:             
+                display="Starting..."
+            else: 
+                display=str(counter) 
+  
+            label['text']=display   # Or label.config(text=display) 
+  
+            # label.after(arg1, arg2) delays by  
+            # first argument given in milliseconds 
+            # and then calls the function given as second argument. 
+            # Generally like here we need to call the  
+            # function in which it is present repeatedly. 
+            # Delays by 1000ms=1 seconds and call count again. 
+            label.after(1000, count)  
+            counter += 1
+  
+    # Triggering the start of the counter. 
+    count()      
+  
+# start function of the stopwatch 
+def Start(label): 
+    global running 
+    running=True
+    counter_label(label) 
+    start['state']='disabled'
+    stop['state']='normal'
+    reset['state']='normal'
+  
+# Stop function of the stopwatch 
+def Stop(): 
+    global running 
+    start['state']='normal'
+    stop['state']='disabled'
+    reset['state']='normal'
+    running = False
+  
+# Reset function of the stopwatch 
+def Reset(label): 
+    global counter 
+    counter=-1
+  
+    # If rest is pressed after pressing stop. 
+    if running==False:       
+        reset['state']='disabled'
+        label['text']="I'll allow it."
+  
+    # If reset is pressed while the stopwatch is running. 
+    else:                
+        label['text']='Starting...'
+  
+root = Tkinter.Tk() 
+root.title("Stopwatch") 
+  
+# Fixing the window size. 
+root.minsize(width=250, height=70) 
+label = Tkinter.Label(root, text="If you keep trying to close it...", fg="black", font="Verdana 20 bold")
+label1 = Tkinter.Label(root, text="DEATH CLOCK", fg="red", font="Times 30 bold")
+rules_label = Tkinter.Label(root, text="Don't you dare.", fg="black", font="Verdana 10 bold")
+label.pack()
+label1.pack()
+rules_label.pack()
+start = Tkinter.Button(root, text='Start',  
+width=15, command=lambda:Start(label)) 
+stop = Tkinter.Button(root, text='Stop',  
+width=15, state='disabled', command=Stop) 
+reset = Tkinter.Button(root, text='Reset', 
+ width=15, state='disabled', command=lambda:Reset(label)) 
+start.pack() 
+stop.pack() 
+reset.pack() 
+root.mainloop() 
+import tkinter as Tkinter
+  
+counter = -1
+running = False
+def counter_label(label): 
+    def count(): 
+        if running: 
+            global counter 
+  
+            # To manage the intial delay. 
+            if counter==-1:             
+                display="Starting..."
+            else: 
+                display=str(counter) 
+  
+            label['text']=display   # Or label.config(text=display) 
+  
+            # label.after(arg1, arg2) delays by  
+            # first argument given in milliseconds 
+            # and then calls the function given as second argument. 
+            # Generally like here we need to call the  
+            # function in which it is present repeatedly. 
+            # Delays by 1000ms=1 seconds and call count again. 
+            label.after(1000, count)  
+            counter += 1
+  
+    # Triggering the start of the counter. 
+    count()      
+  
+# start function of the stopwatch 
+def Start(label): 
+    global running 
+    running=True
+    counter_label(label) 
+    start['state']='disabled'
+    stop['state']='normal'
+    reset['state']='normal'
+  
+# Stop function of the stopwatch 
+def Stop(): 
+    global running 
+    start['state']='normal'
+    stop['state']='disabled'
+    reset['state']='normal'
+    running = False
+  
+# Reset function of the stopwatch 
+def Reset(label): 
+    global counter 
+    counter=-1
+  
+    # If rest is pressed after pressing stop. 
+    if running==False:       
+        reset['state']='disabled'
+        label['text']="I'll allow it."
+  
+    # If reset is pressed while the stopwatch is running. 
+    else:                
+        label['text']='Starting...'
+  
+root = Tkinter.Tk() 
+root.title("Stopwatch") 
+  
+# Fixing the window size. 
+root.minsize(width=250, height=70) 
+label = Tkinter.Label(root, text="Then you will face the consequences...", fg="black", font="Verdana 20 bold")
+label1 = Tkinter.Label(root, text="DEATH CLOCK", fg="red", font="Times 30 bold")
+rules_label = Tkinter.Label(root, text="So don't try it, Buster", fg="black", font="Verdana 10 bold")
+label.pack()
+label1.pack()
+rules_label.pack()
+start = Tkinter.Button(root, text='Start',  
+width=15, command=lambda:Start(label)) 
+stop = Tkinter.Button(root, text='Stop',  
+width=15, state='disabled', command=Stop) 
+reset = Tkinter.Button(root, text='Reset', 
+ width=15, state='disabled', command=lambda:Reset(label)) 
+start.pack() 
+stop.pack() 
+reset.pack() 
+root.mainloop()
+import tkinter as Tkinter
+  
+counter = -1
+running = False
+def counter_label(label): 
+    def count(): 
+        if running: 
+            global counter 
+  
+            # To manage the intial delay. 
+            if counter==-1:             
+                display="Starting..."
+            else: 
+                display=str(counter) 
+  
+            label['text']=display   # Or label.config(text=display) 
+  
+            # label.after(arg1, arg2) delays by  
+            # first argument given in milliseconds 
+            # and then calls the function given as second argument. 
+            # Generally like here we need to call the  
+            # function in which it is present repeatedly. 
+            # Delays by 1000ms=1 seconds and call count again. 
+            label.after(1000, count)  
+            counter += 1
+  
+    # Triggering the start of the counter. 
+    count()      
+  
+# start function of the stopwatch 
+def Start(label): 
+    global running 
+    running=True
+    counter_label(label) 
+    start['state']='disabled'
+    stop['state']='normal'
+    reset['state']='normal'
+  
+# Stop function of the stopwatch 
+def Stop(): 
+    global running 
+    start['state']='normal'
+    stop['state']='disabled'
+    reset['state']='normal'
+    running = False
+  
+# Reset function of the stopwatch 
+def Reset(label): 
+    global counter 
+    counter=-1
+  
+    # If rest is pressed after pressing stop. 
+    if running==False:       
+        reset['state']='disabled'
+        label['text']="I'll allow it."
+  
+    # If reset is pressed while the stopwatch is running. 
+    else:                
+        label['text']='Starting...'
+  
+root = Tkinter.Tk() 
+root.title("Stopwatch") 
+  
+# Fixing the window size. 
+root.minsize(width=250, height=70) 
+label = Tkinter.Label(root, text="...", fg="black", font="Verdana 20 bold")
+label1 = Tkinter.Label(root, text="DEATH CLOCK", fg="red", font="Times 30 bold")
+rules_label = Tkinter.Label(root, text="THIS IS YOUR FINAL WARNING", fg="black", font="Verdana 10 bold")
+label.pack()
+label1.pack()
+rules_label.pack()
+start = Tkinter.Button(root, text='Start',  
+width=15, command=lambda:Start(label)) 
+stop = Tkinter.Button(root, text='Stop',  
+width=15, state='disabled', command=Stop) 
+reset = Tkinter.Button(root, text='Reset', 
+ width=15, state='disabled', command=lambda:Reset(label)) 
+start.pack() 
+stop.pack() 
+reset.pack() 
+root.mainloop()
+import tkinter as Tkinter
+  
+counter = -1
+running = False
+def counter_label(label): 
+    def count(): 
+        if running: 
+            global counter 
+  
+            # To manage the intial delay. 
+            if counter==-1:             
+                display="Starting..."
+            else: 
+                display=str(counter) 
+  
+            label['text']=display   # Or label.config(text=display) 
+  
+            # label.after(arg1, arg2) delays by  
+            # first argument given in milliseconds 
+            # and then calls the function given as second argument. 
+            # Generally like here we need to call the  
+            # function in which it is present repeatedly. 
+            # Delays by 1000ms=1 seconds and call count again. 
+            label.after(1000, count)  
+            counter += 1
+  
+    # Triggering the start of the counter. 
+    count()      
+  
+  
+    # If rest is pressed after pressing stop. 
+    if running==False:       
+        reset['state']='disabled'
+        label['text']="I'll allow it."
+  
+    # If reset is pressed while the stopwatch is running. 
+    else:                
+        label['text']='Starting...'
+  
+root = Tkinter.Tk() 
+root.title("Stopwatch") 
+  
+# Fixing the window size. 
+root.minsize(width=250, height=70) 
+label = Tkinter.Label(root, text="Alright, you asked for it.", fg="black", font="Verdana 20 bold")
+label.pack()
+start = Tkinter.Button(root, text='Start',  
+width=15, command=lambda:Start(label)) 
+stop = Tkinter.Button(root, text='Stop',  
+width=15, state='disabled', command=Stop) 
+reset = Tkinter.Button(root, text='Reset', 
+ width=15, state='disabled', command=lambda:Reset(label)) 
+start.pack() 
+stop.pack() 
+reset.pack() 
+root.mainloop()
+import tkinter as Tkinter
+  
+counter = -1
+running = False
+def counter_label(label): 
+    def count(): 
+        if running: 
+            global counter 
+  
+            # To manage the intial delay. 
+            if counter==-1:             
+                display="Starting..."
+            else: 
+                display=str(counter) 
+  
+            label['text']=display   # Or label.config(text=display) 
+  
+            # label.after(arg1, arg2) delays by  
+            # first argument given in milliseconds 
+            # and then calls the function given as second argument. 
+            # Generally like here we need to call the  
+            # function in which it is present repeatedly. 
+            # Delays by 1000ms=1 seconds and call count again. 
+            label.after(1, count)  
+            counter += 1
+  
+    # Triggering the start of the counter. 
+    count()      
+  
+# start function of the stopwatch 
+def Start(label): 
+    global running 
+    running=True
+    counter_label(label) 
+    start['state']='disabled'
+    stop['state']='normal'
+    reset['state']='normal'
+  
+# Stop function of the stopwatch 
+def Stop(): 
+    global running 
+    start['state']='normal'
+    stop['state']='disabled'
+    reset['state']='normal'
+    running = True
+    label['text']='Nice Try Buster...'
+  
+# Reset function of the stopwatch 
+def Reset(label): 
+    global counter 
+    counter=-1
+  
+    # If rest is pressed after pressing stop. 
+    if running==False:       
+        reset['state']='disabled'
+        label['text']="I'll allow it."
+  
+    # If reset is pressed while the stopwatch is running. 
+    else:                
+        label['text']='Starting...'
+  
+root = Tkinter.Tk() 
+root.title("Stopwatch") 
+  
+# Fixing the window size. 
+root.minsize(width=250, height=70) 
+label = Tkinter.Label(root, text="It's time for:", fg="black", font="Verdana 20 bold")
+label1 = Tkinter.Label(root, text="DEATH CLOCK:", fg="red", font="Times 30 bold")
+rules_label = Tkinter.Label(root, text="HARD MODE", fg="red", font="fixedsys 30 bold italic")
+label.pack()
+label1.pack()
+rules_label.pack()
+start = Tkinter.Button(root, text='Start HARD MODE',  
+width=15, command=lambda:Start(label)) 
+stop = Tkinter.Button(root, text='Stop',  
+width=15, state='disabled', command=Stop) 
+reset = Tkinter.Button(root, text='Reset', 
+ width=15, state='disabled', command=lambda:Reset(label)) 
+start.pack() 
+stop.pack() 
+reset.pack() 
+root.mainloop() 
+import tkinter as Tkinter 
+  
+counter = -1
+running = False
+def counter_label(label): 
+    def count(): 
+        if running: 
+            global counter 
+  
+            # To manage the intial delay. 
+            if counter==-1:             
+                display="Starting..."
+            else: 
+                display=str(counter) 
+  
+            label['text']=display   # Or label.config(text=display) 
+  
+            # label.after(arg1, arg2) delays by  
+            # first argument given in milliseconds 
+            # and then calls the function given as second argument. 
+            # Generally like here we need to call the  
+            # function in which it is present repeatedly. 
+            # Delays by 1000ms=1 seconds and call count again. 
+            label.after(1000, count)  
+            counter += 1
+  
+    # Triggering the start of the counter. 
+    count()      
+  
+# start function of the stopwatch 
+def Start(label): 
+    global running 
+    running=False
+    counter_label(label) 
+    start['state']='disabled'
+    stop['state']='normal'
+    reset['state']='normal'
+  
+# Stop function of the stopwatch 
+def Stop(): 
+    global running 
+    start['state']='normal'
+    stop['state']='disabled'
+    reset['state']='normal'
+    running = False
+  
+# Reset function of the stopwatch 
+def Reset(label): 
+    global counter 
+    counter=-1
+  
+    # If rest is pressed after pressing stop. 
+    if running==False:       
+        reset['state']='disabled'
+        label['text']="Gave up on that, huh?"
+  
+    # If reset is pressed while the stopwatch is running. 
+    else:                
+        label['text']='Starting...'
+  
+root = Tkinter.Tk() 
+root.title("Stopwatch") 
+  
+# Fixing the window size. 
+root.minsize(width=250, height=70) 
+label = Tkinter.Label(root, text="Gave up on that, huh?", fg="black", font="Verdana 20 bold")
+label.pack()
+start = Tkinter.Button(root, text='YOU',  
+width=15, command=lambda:Start(label)) 
+stop = Tkinter.Button(root, text='QUITTER,',  
+width=15, state='disabled', command=Stop) 
+reset = Tkinter.Button(root, text='YOU!', 
+ width=15, state='disabled', command=lambda:Reset(label)) 
+start.pack() 
+stop.pack() 
+reset.pack() 
+root.mainloop()
+
+import tkinter as Tkinter 
+  
+counter = -1
+running = False
+def counter_label(label): 
+    def count(): 
+        if running: 
+            global counter 
+  
+            # To manage the intial delay. 
+            if counter==-1:             
+                display="Starting..."
+            else: 
+                display=str(counter) 
+  
+            label['text']=display   # Or label.config(text=display) 
+  
+            # label.after(arg1, arg2) delays by  
+            # first argument given in milliseconds 
+            # and then calls the function given as second argument. 
+            # Generally like here we need to call the  
+            # function in which it is present repeatedly. 
+            # Delays by 1000ms=1 seconds and call count again. 
+            label.after(1000, count)  
+            counter += 1
+  
+    # Triggering the start of the counter. 
+    count()      
+  
+# start function of the stopwatch 
+def Start(label): 
+    global running 
+    running=False
+    counter_label(label) 
+    start['state']='disabled'
+    stop['state']='normal'
+    reset['state']='normal'
+  
+# Stop function of the stopwatch 
+def Stop(): 
+    global running 
+    start['state']='normal'
+    stop['state']='disabled'
+    reset['state']='normal'
+    running = False
+  
+# Reset function of the stopwatch 
+def Reset(label): 
+    global counter 
+    counter=-1
+  
+    # If rest is pressed after pressing stop. 
+    if running==False:       
+        reset['state']='disabled'
+        label['text']="Fine, then leave."
+  
+    # If reset is pressed while the stopwatch is running. 
+    else:                
+        label['text']='Starting...'
+  
+root = Tkinter.Tk() 
+root.title("Stopwatch") 
+  
+# Fixing the window size. 
+root.minsize(width=250, height=70) 
+label = Tkinter.Label(root, text="Fine, then leave.", fg="black", font="Verdana 20 bold")
+label.pack()
+start = Tkinter.Button(root, text='YOU',  
+width=15, command=lambda:Start(label)) 
+stop = Tkinter.Button(root, text='QUITTER,',  
+width=15, state='disabled', command=Stop) 
+reset = Tkinter.Button(root, text='YOU!', 
+ width=15, state='disabled', command=lambda:Reset(label)) 
+start.pack() 
+stop.pack() 
+reset.pack() 
+root.mainloop()
+
+
+
